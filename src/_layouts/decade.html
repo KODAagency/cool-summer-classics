@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+<!-- <div class="scene-element scene-element--fadeIn"> -->
+
+  <header class="decade">
+    <nav class="drink-nav">
+      <div class="contained">
+        <a href="/" title="Cool Summer Classics">
+          <svg class="logo">
+            <use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href="#cool-summer-classics"></use>
+          </svg>
+        </a>
+
+        {% include decade-links.html %}
+
+      </div>
+    </nav>
+
+    <div class="scene-element scene-element--fadeInBottom">
+      <section class="decade-intro">
+        <div class="contained">
+          <div class="headline-wrapper">
+            <img src="/assets/images/{{ page.title }}.svg" alt="{{ page.title }}" class="decade-headline">
+          </div>
+          <p class="if">If you're a child of the {{ page.short-title }}...</p>
+          {{ content }}
+        </div>
+      </section>
+    </div>
+  </header>
+
+<!-- </div> -->
+
+  {% include share.html classes="blue" %}
+
+  <section class="drink">
+    <div class="contained">
+      <h2>{{ page.drink.name }}</h2>
+
+      <p class="song">&#8220;{{ page.song.title }}&#8221; - {{ page.song.artist }}</p>
+
+      <img src="{{ page.drink.photo }}?01" alt="{{ page.drink.name }}" class="drink-photo">
+
+      <article class="drink-info">
+        <h3>Recipe</h3>
+        <ul class="drink-recipe">
+        {% for ingredient in page.drink.recipe %}
+          <li><span>{{ ingredient.qty }}</span>{{ ingredient.ingredient }}</li>
+        {% endfor %}
+        </ul>
+
+        <h3>Method</h3>
+        <ol class="drink-directions">
+        {% for step in page.drink.directions %}
+          <li>{{ step }}</li>
+        {% endfor %}
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="slang">
+    <div class="contained">
+      <h3>What You Said In The</h2>
+      <img src="/assets/images/{{ page.title }}.svg" alt="{{ page.title }}" class="decade-title-small">
+      <ul>
+      {% for word in page.slang %}
+        <li>&#8220;{{ word }}&#8221;</li>
+      {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="song">
+    <div class="contained">
+      <p class="song-title">&#8220;{{ page.song.title }}&#8221;</p>
+      <p class="song-artist">{{ page.song.artist }}</p>
+      <p class="song-year">Released: {{ page.song.year }}</p>
+
+      <img src="/assets/images/download.svg" alt="Download the song" class="download-title">
+
+      <ul class="download-links">
+        <li><a href="{{ page.song.download.itunes }}" title="itunes"><img src="/assets/images/app-store.png" alt="App Store"></a></li>
+        <li><a href="{{ page.song.download.play }}" title="play"><img src="/assets/images/play-store.png" alt="Google Play"></a></li>
+      </ul>
+    </div>
+  </section>
+
+  {% include share.html classes="white" %}

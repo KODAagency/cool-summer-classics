@@ -1,0 +1,29 @@
+# Jekyll config precedence:
+# 1. Gulpfile task
+# 2. config.build.yml
+# 3. config.yml
+
+name: coolsummerclassics.com
+description:
+url: http://www.coolsummerclassics.com
+
+markdown: redcarpet
+highlighter: pygments
+
+baseurl: ''
+
+# Gulp handles images and assets
+exclude: ['**.sass','assets/*', 'img', 'sass', 'css', 'js', 'fonts', '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+
+# Only delete files related to the Jekyll build task in gulpfile
+keep_files: ['assets', 'robots.txt', 'favicon.ico']
+
+url: "http://www.coolsummerclassics.com" # the base hostname & protocol for your site
+
+# _confg.build.yml sets futre and show_draft to false on `grunt build`
+# future: ture
+# show_drafts: true
+
+collections:
+  decades:
+    output: true

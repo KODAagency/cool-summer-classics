@@ -1,0 +1,13 @@
+<ul class="decade-links">
+{% for decade in site.decades %}
+
+<li class="decade-{{ decade.title }}">
+<a href="{{ decade.permalink }}" title="{{ decade.short-title }}" class="{% if page.url == decade.permalink %}current{% endif %}">
+      <svg>
+        <use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href="#decade-{{ decade.title }}"></use>
+      </svg>
+    </a>
+  </li>
+
+{% endfor %}
+</ul>

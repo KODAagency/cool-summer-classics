@@ -1,0 +1,91 @@
+//  C O L O R S
+
+$color-60s: #8aadb0
+$color-70s: #7c816a
+$color-80s: #dbb256
+$color-90s: #E49242
+
+$color-black: #000
+$color-white: #fff
+$color-orange: $color-90s
+$color-blue: #90b1b4
+$color-green-dark: #9eab77
+$color-green-light: #abb982
+
+=bg-grad()
+  background-color: #bed4d0
+  background-image: linear-gradient(to bottom, #bed4d0, #4e3725)
+
+
+//  F O N T S
+
+@font-face
+  font-family: 'Gotham'
+  src: url('/assets/fonts/GothamBook.ttf') format('truetype')
+  font-weight: 300
+
+@font-face
+  font-family: 'Gotham-Med'
+  src: url('/assets/fonts/GothamMedium.ttf') format('truetype')
+  font-weight: 400
+
+@font-face
+  font-family: 'Gotham-Bold'
+  src: url('/assets/fonts/GothamBold.ttf') format('truetype')
+  font-weight: 500
+
+$font-body: Gotham, sans-serif
+$font-body-med: Gotham-Med, sans-serif
+$font-body-bold: Gotham-Bold, sans-serif
+
+$font-body: Roboto, sans-serif
+$font-body-med: Roboto, sans-serif
+$font-body-bold: Roboto, sans-serif
+
+//  B R E A K P O I N T S
+
+$bp-small: 33em
+$bp-med: 42em
+$bp-large: 55em
+$bp-xl: 74em
+
+
+//  G R I D
+
+$jeet-max-width: 74em
+$jeet-max-width: 50em
+
+// +edit
+
+.contained
+  +center
+  padding: 0 ms(0)
+
+  +breakpoint($bp-large)
+    padding: 0
+
+// .contained
+//   background-color: rgba(255,255,0,.5)
+
+//   +breakpoint($bp-small)
+//     background-color: rgba(255,0,0,.5)
+
+//   +breakpoint($bp-med)
+//     background-color: rgba(0,255,0,.5)
+
+//   +breakpoint($bp-large)
+//     background-color: rgba(0,0,255,.5)
+
+//   +breakpoint($bp-xl)
+//     background-color: rgba(0,255,255,.5)
+
+//  M O D U L A R  S C A L E
+
+$ms-base: 1rem
+$ms-ratio: 1.25
+
+
+//  T Y P E
+
+p, h1, h2, h3, h4, h5
+  margin-bottom: 0

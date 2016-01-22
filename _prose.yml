@@ -1,0 +1,42 @@
+prose:
+  rooturl: "src"
+  ignore:
+    - src/_includes
+    - src/_layouts
+    - src/assets
+    - src/work
+    - src/about
+    - src/index.md
+    - src/robots.txt
+  metadata:
+    _team:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "team-bio"
+      - name: "name"
+        field:
+          element: "text"
+          label: "Name"
+      - name: "position"
+        field:
+          element: "text"
+          label: "Position"
+      - name: "email"
+        field:
+          element: "text"
+          label: "Email"
+      - name: "portrait"
+        field:
+          element: "text"
+          label: "Portrait URL"
+      - name: "quote"
+        field:
+          element: "textarea"
+          label: "Quote"
+      - name: "brands"
+        field:
+          element: "hidden"
+          value: "test"
+
+

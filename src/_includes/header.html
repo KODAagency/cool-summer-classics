@@ -1,0 +1,8 @@
+<header>
+  <h1>Cool Summer Classics</h1>
+  <nav>
+  {% for decade in site.decades %}
+    <a href="{{ decade.permalink }}" title="{{ decate.title }}">{{ decade.title }}</a>
+  {% endfor %}
+  </nav>
+</header>

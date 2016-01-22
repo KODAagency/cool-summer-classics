@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cool Summer Classics</title>
+    <meta name="description" content="{{ page.desc }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+
+    <!-- build:css /assets/styles/vendor.css -->
+    <link href="/bower_components/normalize.css/normalize.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link href="/assets/styles/styles.css" rel="stylesheet">
+    <link href="/assets/styles/vendor.css" rel="stylesheet">
+
+    <!-- build:js /assets/scripts/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <script src="/assets/scripts/modernizr.js"></script>
+  </head>
+  <body {% if page.url == page.permalink %} class="decade" {% endif %}>
+    <div style="display:none">{% include svg.svg %}</div>
+
+    <main id="main" class="m-scene" role="main">
+      {{ content }}
+    </main>
+
+    <!-- build:js /assets/scripts/vendor.js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/smoothstate/jquery.smoothState.js"></script>
+    <!-- endbuild -->
+    <script src="/assets/scripts/vendor.js"></script>
+
+    <script>
+      (function ($) {
+        'use strict';
+
+        var $b = $('html, body');
+        var content = $('#main').smoothState({
+          prefetch: true,
+          pageCacheSize: 4,
+          development: true,
+          onStart: {
+            duration: 250,
+            render: function () {
+              content.toggleAnimationClass('is-exiting');
+              // Scroll user to the top
+              $b.animate({ 'scrollTop': 0 });
+            }
+          }
+        }).data('smoothState');
+      })(jQuery);
+    </script>
+
+    {% include google-analytics.html %}
+  </body>
+</html>
